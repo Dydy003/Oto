@@ -9,10 +9,9 @@ import Foundation
 import SwiftData
 
 @Model
-final class Item {
-    var timestamp: Date
+final class TaskItem {
     
-    init(timestamp: Date) {
-        self.timestamp = timestamp
-    }
+    private(set) var id: UUID
+    var title: String
+
 }
