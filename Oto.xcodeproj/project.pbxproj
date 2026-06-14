@@ -10,10 +10,84 @@
 		F80BC3852FDEACD900EA8772 /* Oto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F80BC3B32FDEB99D00EA8772 /* Exceptions for "Extension" folder in "Oto" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Extension+COLOR.swift",
+				"Extension+UI.swift",
+				"Extension+VIEW.swift",
+			);
+			target = F80BC3842FDEACD900EA8772 /* Oto */;
+		};
+		F80BC3B82FDED39100EA8772 /* Exceptions for "ViewModels" folder in "Oto" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AddTaskViewModel.swift,
+				TaskListViewModel.swift,
+			);
+			target = F80BC3842FDEACD900EA8772 /* Oto */;
+		};
+		F80BC3BE2FDED3BB00EA8772 /* Exceptions for "Views" folder in "Oto" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AddTaskView.swift,
+				TaskDetailView.swift,
+				TaskRowView.swift,
+				TaskView.swift,
+			);
+			target = F80BC3842FDEACD900EA8772 /* Oto */;
+		};
+		F80BC3CA2FDED4B900EA8772 /* Exceptions for "Services" folder in "Oto" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TaskRepository.swift,
+			);
+			target = F80BC3842FDEACD900EA8772 /* Oto */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F80BC3872FDEACD900EA8772 /* Oto */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Oto;
+			sourceTree = "<group>";
+		};
+		F80BC3A82FDEB8E000EA8772 /* Extension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F80BC3B32FDEB99D00EA8772 /* Exceptions for "Extension" folder in "Oto" target */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F80BC3AB2FDEB8E000EA8772 /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F80BC3AC2FDEB8E000EA8772 /* Services */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F80BC3CA2FDED4B900EA8772 /* Exceptions for "Services" folder in "Oto" target */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F80BC3AD2FDEB8E000EA8772 /* ViewModels */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F80BC3B82FDED39100EA8772 /* Exceptions for "ViewModels" folder in "Oto" target */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F80BC3AE2FDEB8E000EA8772 /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F80BC3BE2FDED3BB00EA8772 /* Exceptions for "Views" folder in "Oto" target */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -30,8 +104,13 @@
 		F80BC37C2FDEACD900EA8772 = {
 			isa = PBXGroup;
 			children = (
-				F80BC3872FDEACD900EA8772 /* Oto */,
 				F80BC3862FDEACD900EA8772 /* Products */,
+				F80BC3872FDEACD900EA8772 /* Oto */,
+				F80BC3AB2FDEB8E000EA8772 /* Models */,
+				F80BC3AD2FDEB8E000EA8772 /* ViewModels */,
+				F80BC3AE2FDEB8E000EA8772 /* Views */,
+				F80BC3AC2FDEB8E000EA8772 /* Services */,
+				F80BC3A82FDEB8E000EA8772 /* Extension */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +137,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				F80BC3872FDEACD900EA8772 /* Oto */,
+				F80BC3AB2FDEB8E000EA8772 /* Models */,
 			);
 			name = Oto;
 			productName = Oto;

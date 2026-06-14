@@ -12,8 +12,8 @@ import SwiftData
 struct OtoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           TaskView()
         }
-        .modelContainer()
+        .modelContainer(for: TaskItem.self)
     }
 }

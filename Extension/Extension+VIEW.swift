@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
+
+extension View {
+    func gradient() -> some View {
+        ZStack {
+            Color.gradients.ignoresSafeArea()
+            self
+        }
+    }
+}

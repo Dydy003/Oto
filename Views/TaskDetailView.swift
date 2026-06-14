@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct TaskDetailView: View {
+    
+    @Environment(\.dismiss) private var dismiss
+    
+    let task: TaskItem
+    let vm: TaskListViewModel
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    TaskDetailView()
+    TaskDetailView(
+        task: TaskItem(title: "Test", priority: .urgent),
+        vm: TaskListViewModel()
+    )
 }
