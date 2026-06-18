@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddTaskView: View {
     
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
+    
     @State private var vm = AddTaskViewModel()
     
     let onSave: (TaskItem) -> Void
@@ -38,6 +41,7 @@ struct AddTaskView: View {
                     .pickerStyle(.segmented)
                 }
             }
+            .scrollContentBackground(.hidden)
             .gradient()
             .navigationTitle("Vos Tâches")
             .navigationBarTitleDisplayMode(.inline)
@@ -51,6 +55,8 @@ struct AddTaskView: View {
     private var toolbar: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
             Button("Annuler") { dismiss() }
+                .buttonStyle((.borderedProminent))
+                .tint(Color.oranges)
         }
         
         ToolbarItem(placement: .confirmationAction) {
