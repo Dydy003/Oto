@@ -16,6 +16,7 @@
 			membershipExceptions = (
 				"Extension+COLOR.swift",
 				"Extension+UI.swift",
+				"Extension+UIDevice.swift",
 				"Extension+VIEW.swift",
 			);
 			target = F80BC3842FDEACD900EA8772 /* Oto */;

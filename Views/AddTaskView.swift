@@ -11,7 +11,7 @@ import SwiftData
 struct AddTaskView: View {
     
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
+    //    @Environment(\.verticalSizeClass) private var verticalSizeClass
     
     @State private var vm = AddTaskViewModel()
     
@@ -22,29 +22,41 @@ struct AddTaskView: View {
         
         NavigationStack {
             Form {
-                Section("Tâche Titre") {
-                    TextField("Entrée un nom", text: $vm.title)
-                        .submitLabel(.done)
-                    if let hint = vm.validationHint {
-                        Text(hint)
-                            .font(.caption)
-                            .foregroundStyle(.red)
-                    }
-                }
-                
-                Section("Priorité") {
-                    Picker("Priorité", selection: $vm.priority) {
-                        ForEach(Priority.allCases) { priority in
-                            Text(priority.title).tag(priority)
+                Section {
+                    VStack(spacing: 22) {
+                        Text("Task Titre")
+                            .if(UIDevice.isIPad, transform: { view in
+                                view.font(.system(size: 35, weight: .semibold))
+                            })
+                            .if(UIDevice.isIPhone, transform: { view in
+                                view.font(.system(size: 25, weight: .semibold))
+                            })
+                            .padding(.top, 30)
+                        TextField("Nom de la tâche", text: $vm.title)
+                            .textFieldStyle(.roundedBorder)
+                            .submitLabel(.done)
+                        if let hint = vm.validationHint {
+                            Text(hint)
+                                .font(.caption)
+                                .foregroundStyle(.red)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                         }
+                        Picker("Priorité", selection: $vm.priority) {
+                            ForEach(Priority.allCases) { priority in
+                                Text(priority.title).tag(priority)
+                            }
+                        }
+                        .pickerStyle(.segmented)
                     }
-                    .pickerStyle(.segmented)
+                    .padding(.vertical, UIDevice.isIPad ? 400 : 30)
+//                    .if(UIDevice.isIPad) { view in
+//                        view.padding(.vertical, 400)
+//                    }
                 }
+                .listRowBackground(Color.clear)
             }
             .scrollContentBackground(.hidden)
-            .gradient()
-            .navigationTitle("Vos Tâches")
-            .navigationBarTitleDisplayMode(.inline)
+            .background(Color.gradients)
             .toolbar {
                 toolbar
             }
